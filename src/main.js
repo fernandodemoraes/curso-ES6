@@ -1,9 +1,15 @@
 import api from './api';
 
+/**
+ * Classe App
+ */
 class App {
 
+    /**
+     * Construtor
+     */
     constructor() {
-        this.repositorios = [];
+        this.repositorios      = [];
         this.elementoContainer = document.getElementById('container');
         this.elementoForm      = document.getElementById('repo-form');
         this.elementoInput     = document.querySelector('input[name=repositorio');
@@ -11,11 +17,19 @@ class App {
         this.registroHandlers();
     }
 
+    /**
+     * Disparo do evendo addRepositorio
+     */
     registroHandlers() {
         // utilizando arrow function para adicionar o repositório quando disparar o submit
         this.elementoForm.onsubmit = event => this.addRepositorio(event);
     }
 
+    /**
+     * Set loading
+     * 
+     * @param {*} loading 
+     */
     setLoading(loading = true) {
         if (loading === true) {
             let elementoLoading = document.createElement('i');
@@ -28,6 +42,11 @@ class App {
         }
     }
 
+    /**
+     * Evento de adicionar um repositório
+     * 
+     * @param {*} event 
+     */
     async addRepositorio(event) {
         event.preventDefault();
 
@@ -61,6 +80,9 @@ class App {
         this.setLoading(false);
     }
 
+    /**
+     * Renderizar o html na tela
+     */
     render() {
         this.elementoList.innerHTML = '';
 

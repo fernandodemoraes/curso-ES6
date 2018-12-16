@@ -44,86 +44,25 @@
     <main role="main">
 
         <section class="jumbotron text-center">
-            <div class="container">
+            <div class="container" id="container">
                 <h1 class="jumbotron-heading"><i class="fab fa-github-alt"></i> Repositório</h1>
-                <div class="input-group mb-3">
-                    <div class="input-group-prepend">
-                        <span class="input-group-text" id="basic-addon1"><i class="fas fa-search"></i></span>
+                <form id="repo-form">
+                    <div class="input-group mb-3">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text" id="basic-addon1"><i class="fas fa-search"></i></span>
+                        </div>
+                        <input type="text" class="form-control" name="repositorio" placeholder="Informe o repositório" id="repositorio">
                     </div>
-                    <input type="text" class="form-control" placeholder="Informe o repositório" id="repositorio">
-                </div>
-                <button type="submit" class="btn btn-primary btn-lg"><i class="fas fa-plus"></i> Adicionar</button>
+                    <button type="submit" class="btn btn-primary btn-lg"><i class="fas fa-plus"></i> Adicionar</button>
+                </form>
+            </br>
             </div>
         </section>
 
         <div class="album py-5 bg-light">
             <div class="container">
 
-                <div class="row">
-                    <div class="col-md-3">
-                        <div class="card mb-4 shadow-sm">
-                            <img class="card-img-top" src="https://avatars3.githubusercontent.com/u/16976951?s=400&u=5b7dee6a9576adb2b82cd274e35e4bb4752ed82e&v=4" alt="">
-                            <div class="card-body">
-                                <blockquote class="blockquote text-center">
-                                    <p class="mb-0">Desafie-se e evolua.</p>
-                                    <footer class="blockquote-footer"><cite title="Título da fonte">Fernando de Moraes Sousa</cite></footer>
-                                </blockquote>
-                                <div class="d-flex justify-content-between align-items-center">
-                                    <div class="btn-group">
-                                        <a href="https://github.com/fernandodemoraes/curso-ES6" target="_blank" class="btn btn-sm btn-outline-secondary" role="button" aria-pressed="true">Acessar</a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-3">
-                        <div class="card mb-4 shadow-sm">
-                            <img class="card-img-top" src="https://avatars3.githubusercontent.com/u/16976951?s=400&u=5b7dee6a9576adb2b82cd274e35e4bb4752ed82e&v=4" alt="">
-                            <div class="card-body">
-                                <blockquote class="blockquote text-center">
-                                    <p class="mb-0">Desafie-se e evolua.</p>
-                                    <footer class="blockquote-footer"><cite title="Título da fonte">Fernando de Moraes Sousa</cite></footer>
-                                </blockquote>
-                                <div class="d-flex justify-content-between align-items-center">
-                                    <div class="btn-group">
-                                        <a href="https://github.com/fernandodemoraes/curso-ES6" target="_blank" class="btn btn-sm btn-outline-secondary" role="button" aria-pressed="true">Acessar</a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-3">
-                        <div class="card mb-4 shadow-sm">
-                            <img class="card-img-top" src="https://avatars3.githubusercontent.com/u/16976951?s=400&u=5b7dee6a9576adb2b82cd274e35e4bb4752ed82e&v=4" alt="">
-                            <div class="card-body">
-                                <blockquote class="blockquote text-center">
-                                    <p class="mb-0">Desafie-se e evolua.</p>
-                                    <footer class="blockquote-footer"><cite title="Título da fonte">Fernando de Moraes Sousa</cite></footer>
-                                </blockquote>
-                                <div class="d-flex justify-content-between align-items-center">
-                                    <div class="btn-group">
-                                        <a href="https://github.com/fernandodemoraes/curso-ES6" target="_blank" class="btn btn-sm btn-outline-secondary" role="button" aria-pressed="true">Acessar</a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-3">
-                        <div class="card mb-4 shadow-sm">
-                            <img class="card-img-top" src="https://avatars3.githubusercontent.com/u/16976951?s=400&u=5b7dee6a9576adb2b82cd274e35e4bb4752ed82e&v=4" alt="">
-                            <div class="card-body">
-                                <blockquote class="blockquote text-center">
-                                    <p class="mb-0">Desafie-se e evolua.</p>
-                                    <footer class="blockquote-footer"><cite title="Título da fonte">Fernando de Moraes Sousa</cite></footer>
-                                </blockquote>
-                                <div class="d-flex justify-content-between align-items-center">
-                                    <div class="btn-group">
-                                        <a href="https://github.com/fernandodemoraes/curso-ES6" target="_blank" class="btn btn-sm btn-outline-secondary" role="button" aria-pressed="true">Acessar</a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                <div class="row" id='repo-list'>
                 </div>
             </div>
         </div>
@@ -138,7 +77,7 @@
             <p>Lista de repositórios</p>
         </div>
     </footer>
-    <script src="./bundle.js"></script>
+    <script src="bundle.js"></script>
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
         crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
